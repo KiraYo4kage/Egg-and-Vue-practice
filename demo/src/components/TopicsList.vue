@@ -26,7 +26,7 @@
             </span>
 
             <a class="last_time pull-right">
-              <span class="last_active_time">{{last_time(index)}}</span>
+              <span class="last_active_time">{{last_time2(index)}}</span>
             </a>
 
             <div class="topic_title_wrapper">
@@ -71,6 +71,9 @@ export default {
         default:
           return '刚刚';
       }
+    },
+    last_time2(index) {
+      return this.$moment(this.topics[index].last_reply_at).fromNow()
     },
     ...mapActions(['indexTopic','showTopic','createTopic','updateTopic','jumpToDetail'])
   }
